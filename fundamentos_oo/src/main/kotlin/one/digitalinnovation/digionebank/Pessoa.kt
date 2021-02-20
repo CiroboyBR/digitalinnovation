@@ -3,17 +3,14 @@ package one.digitalinnovation.digionebank
 class Pessoa {
     var nome: String = "Ciro"
     var cpf: String = "021.021.245-85"
-
-    inner class Endereco {
-        var logradouro: String = "Rua A"
-        var numero: Int = 401
-    }
+    private set
 }
 
 fun main() {
     val ciro = Pessoa()
+    ciro.cpf = "123" //Esse set não vai funcionar porque a classe especificou que está privado
 
     println("Nome: "+ciro.nome)
     println("CPF: "+ciro.cpf)
-    println("CPF: "+ciro.Endereco().logradouro)
+
 }
